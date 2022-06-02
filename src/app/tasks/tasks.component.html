@@ -1,0 +1,36 @@
+<div class = "container" > 
+
+    <button class="btn btn-success" [routerLink]="['/tasks/add']">New task</button> 
+    
+     <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Task</th>
+          <th>Note</th>
+          <th></th>
+        </tr>
+        </thead>
+    
+    
+        <tbody *ngFor="let tsk of myservice.taskss" > <!-- * -->
+        <tr>
+          <td>{{tsk.id}}</td>
+          <td>{{tsk.title}}</td>
+          <td>{{tsk.note}}</td>
+          <td>
+            <button class="btn  btn-success"    [routerLink]="['/tasks/' , tsk.id]"       ><i class="far fa-eye">VIEW</i></button>        
+            <button class="btn  btn-primary"  [routerLink]="['/tasks/edit/' , tsk.id]"        ><i class="far fa-edit"></i>EDIT</button> 
+            <button class="btn  btn-danger"      (click)="myservice.removeTask(tsk.id)"    ><i class="far fa-edit"></i>REMOVE</button>       
+          </td>
+        </tr>	
+        </tbody>
+    
+    
+        
+      </table>
+    
+    
+      
+    </div>  
+      

@@ -1,0 +1,23 @@
+<div class = "container" > 
+    <h2>Edit your task</h2>
+  
+  <form>
+    <div class="form-group">
+      <label for="taskTitle">Title</label>
+      <input type="text" id="taskTitle" class="form-control"  [formControl]="title" > 
+    </div>
+  
+    <div class="form-group">
+      <label for="taskNote">Note</label>
+      <input type="text" id="taskNote" class="form-control"  [formControl]="note" > 
+    </div>
+  
+   <br>
+    <div class="form-group">
+      <button  class="btn btn-primary" (click)="updateTask()">Update</button>  
+      <button class="btn btn-light" >Cancel</button> 
+    </div>
+  </form>
+  
+    
+  </div>  
